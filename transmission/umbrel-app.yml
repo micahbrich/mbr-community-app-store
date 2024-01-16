@@ -1,5 +1,5 @@
 manifestVersion: 1
-id: mbr-transovpn
+id: mbr-transmission_openvpn
 name: Transsmission OpenVPN
 tagline: "Transmission with OpenVPN"
 version: "5.3.1"
