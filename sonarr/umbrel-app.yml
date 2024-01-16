@@ -2,6 +2,7 @@ manifestVersion: 1.1
 id: mbr-sonarr
 category: media
 name: Sonarr
+icon: https://getumbrel.github.io/umbrel-apps-gallery/sonarr/icon.svg
 version: "3.0.10"
 tagline: Smart PVR for newsgroup and bittorrent users
 description: >-
@@ -14,9 +15,9 @@ repo: https://github.com/Sonarr/Sonarr
 support: https://github.com/Sonarr/Sonarr/issues
 port: 8989
 gallery:
-  - 1.jpg
-  - 2.jpg
-  - 3.jpg
+  - https://getumbrel.github.io/umbrel-apps-gallery/sonarr/1.jpg
+  - https://getumbrel.github.io/umbrel-apps-gallery/sonarr/2.jpg
+  - https://getumbrel.github.io/umbrel-apps-gallery/sonarr/3.jpg
 path: ""
 releaseNotes: >-
   This release updates Sonarr from 3.0.9 to 3.0.10

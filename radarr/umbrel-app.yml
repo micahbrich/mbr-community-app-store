@@ -2,6 +2,7 @@ manifestVersion: 1.1
 id: mbr-radarr
 category: media
 name: Radarr
+icon: https://getumbrel.github.io/umbrel-apps-gallery/radarr/icon.svg
 version: "5.0.3.8127"
 tagline: Your movie collection manager
 description: >-
@@ -14,9 +15,9 @@ repo: https://github.com/Radarr/Radarr
 support: https://github.com/Radarr/Radarr/issues
 port: 7878
 gallery:
-  - 1.jpg
-  - 2.jpg
-  - 3.jpg
+  - https://getumbrel.github.io/umbrel-apps-gallery/radarr/1.jpg
+  - https://getumbrel.github.io/umbrel-apps-gallery/radarr/2.jpg
+  - https://getumbrel.github.io/umbrel-apps-gallery/radarr/3.jpg
 path: ""
 releaseNotes: >-
   This update of Radarr from 4.1.0.6175 to v5.0.3.8127 includes various bug fixes, improvements, and new features, including the following highlights.

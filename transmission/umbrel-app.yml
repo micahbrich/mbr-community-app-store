@@ -3,7 +3,7 @@ id: mbr-transovpn
 name: Transsmission OpenVPN
 tagline: "Transmission with OpenVPN"
 version: "5.3.1"
-port: 9091
+icon: https://getumbrel.github.io/umbrel-apps-gallery/transmission/icon.svg
 category: networking
 description: >-
   Transmission is designed for easy, powerful use. We've set the defaults to just work and it only takes a few clicks to configure advanced features like watch directories, bad peer blocklists, and the web interface. When Ubuntu chose Transmission as its default BitTorrent client, one of the most-cited reasons was its easy learning curve.
@@ -23,12 +23,12 @@ developer: Transmission
 website: https://transmissionbt.com/
 dependencies: []
 repo: https://github.com/haugene/docker-transmission-openvpn
-support: https://github.com/transmission/transmission/issues
+support: https://github.com/haugene/docker-transmission-openvpn/issues
 port: 9091
 gallery:
-  - 1.jpg
-  - 2.jpg
-  - 3.jpg
+  - https://apps.umbrel.com/_next/image?url=https%3A%2F%2Fgetumbrel.github.io%2Fumbrel-apps-gallery%2Ftransmission%2F1.jpg&w=2048&q=75
+  - https://apps.umbrel.com/_next/image?url=https%3A%2F%2Fgetumbrel.github.io%2Fumbrel-apps-gallery%2Ftransmission%2F2.jpg&w=2048&q=75
+  - https://apps.umbrel.com/_next/image?url=https%3A%2F%2Fgetumbrel.github.io%2Fumbrel-apps-gallery%2Ftransmission%2F3.jpg&w=2048&q=75
 path: "/transmission/web/"
 defaultUsername: ""
 defaultPassword: ""
