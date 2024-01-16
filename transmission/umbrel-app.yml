@@ -1,0 +1,28 @@
+manifestVersion: 1
+id: transovpn
+name: Transsmission OpenVPN
+tagline: "Transmission with OpenVPN"
+icon: https://getumbrel.github.io/umbrel-apps-gallery/transmission/icon.svg
+category: Networking
+version: "5.3.1"
+port: 9091
+description: >-
+  Transmission with OpenVPN, based on https://github.com/haugene/docker-transmission-openvpn
+
+developer: mbr
+website: https://micahrich.com
+submitter: micahbrich
+submission: https://github.com/micahbrich/mbr-community-app-store
+repo: https://github.com/micahbrich/mbr-community-app-store
+support: https://github.com/micahbrich/mbr-community-app-store/issues
+gallery:
+  - https://apps.umbrel.com/_next/image?url=https%3A%2F%2Fgetumbrel.github.io%2Fumbrel-apps-gallery%2Ftransmission%2F1.jpg&w=2048&q=75
+  - https://apps.umbrel.com/_next/image?url=https%3A%2F%2Fgetumbrel.github.io%2Fumbrel-apps-gallery%2Ftransmission%2F2.jpg&w=2048&q=75
+  - https://apps.umbrel.com/_next/image?url=https%3A%2F%2Fgetumbrel.github.io%2Fumbrel-apps-gallery%2Ftransmission%2F3.jpg&w=2048&q=75
+releaseNotes: >-
+  ## 5.3.1
+  - Launch with latest Docker image
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
