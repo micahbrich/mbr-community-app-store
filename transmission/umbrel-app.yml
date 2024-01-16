@@ -1,28 +1,41 @@
 manifestVersion: 1
-id: transovpn
+id: mbr-transovpn
 name: Transsmission OpenVPN
 tagline: "Transmission with OpenVPN"
-icon: https://getumbrel.github.io/umbrel-apps-gallery/transmission/icon.svg
-category: Networking
 version: "5.3.1"
 port: 9091
+category: networking
 description: >-
-  Transmission with OpenVPN, based on https://github.com/haugene/docker-transmission-openvpn
+  Transmission is designed for easy, powerful use. We've set the defaults to just work and it only takes a few clicks to configure advanced features like watch directories, bad peer blocklists, and the web interface. When Ubuntu chose Transmission as its default BitTorrent client, one of the most-cited reasons was its easy learning curve.
 
-developer: mbr
-website: https://micahrich.com
-submitter: micahbrich
-submission: https://github.com/micahbrich/mbr-community-app-store
-repo: https://github.com/micahbrich/mbr-community-app-store
-support: https://github.com/micahbrich/mbr-community-app-store/issues
-gallery:
-  - https://apps.umbrel.com/_next/image?url=https%3A%2F%2Fgetumbrel.github.io%2Fumbrel-apps-gallery%2Ftransmission%2F1.jpg&w=2048&q=75
-  - https://apps.umbrel.com/_next/image?url=https%3A%2F%2Fgetumbrel.github.io%2Fumbrel-apps-gallery%2Ftransmission%2F2.jpg&w=2048&q=75
-  - https://apps.umbrel.com/_next/image?url=https%3A%2F%2Fgetumbrel.github.io%2Fumbrel-apps-gallery%2Ftransmission%2F3.jpg&w=2048&q=75
-releaseNotes: >-
-  ## 5.3.1
-  - Launch with latest Docker image
+
+  Transmission has one of the lowest memory & resource footprints of any major BitTorrent client. Transmission's light overhead is one reason why it is so well suited for home NAS and media servers. Having been used by Western Digital, Zyxel and Belkin, Transmission gives truly impressive performance on almost any compatible hardware.
+
+  
+  Transmission is an open source, volunteer-based project. Unlike some BitTorrent clients, Transmission doesn't play games with its users to make money.
+
+  
+  We don't bundle toolbars, pop-up ads, flash ads, twitter tools, or anything else. It doesn't hold some features back for a payware version. We don't track our users. Our website and forums have no third-party ads or analytics.
+
+
+  ⚠️ Transmission downloads torrents over the Clearnet, not Tor.
+developer: Transmission
+website: https://transmissionbt.com/
 dependencies: []
-path: ""
+repo: https://github.com/haugene/docker-transmission-openvpn
+support: https://github.com/transmission/transmission/issues
+port: 9091
+gallery:
+  - 1.jpg
+  - 2.jpg
+  - 3.jpg
+path: "/transmission/web/"
 defaultUsername: ""
 defaultPassword: ""
+torOnly: false
+releaseNotes: >-
+  First attempt to get Transmission with OpenVPN working on Umbrel. This is a fork of the official Transmission app, but with the addition of OpenVPN. This is a work in progress, and I'm not sure if it will work. Please report any issues to
+permissions:
+  - STORAGE_DOWNLOADS
+submitter: Umbrel
+submission: https://github.com/getumbrel/umbrel-apps/commit/60878f278d544b204d8e7c96240c797f43a9b319

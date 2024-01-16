@@ -1,5 +1,5 @@
 manifestVersion: 1.1
-id: sonarr
+id: mbr-sonarr
 category: media
 name: Sonarr
 version: "3.0.10"

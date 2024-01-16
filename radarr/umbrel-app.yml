@@ -1,5 +1,5 @@
 manifestVersion: 1.1
-id: radarr
+id: mbr-radarr
 category: media
 name: Radarr
 version: "5.0.3.8127"
