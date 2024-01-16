@@ -5,52 +5,49 @@ services:
   app_proxy:
     environment:
       # The format here is: <app-id>_<docker-service-name>_1
-      APP_HOST: transmission_openvpn_server_1
+      APP_HOST: mbr-transmission_openvpn_server_1
       APP_PORT: 9091
-      image: haugene/transmission-openvpn
-      cap_add:
-        - NET_ADMIN
-      container_name: transmission
-      restart: unless-stopped
-      dns:
-        - 8.8.8.8  # Using google dns
-        - 8.8.4.4 
-      volumes:
-        - ${APPDATA}transmission:/data  # Transmission-openvpn data folder where config and stuff defaults 
-        - ${DOWNLOAD}
-        - ${WATCH}
-        - ${APPDATA}transmission/scripts:/scripts  # In case you want to plug into any of the image hooks
-        - ${GMEDIA_TV}
-        - ${GMEDIA_MOVIE}
-        - /home/micahbrich/scripts:/hostpipe
-      environment:
-        - TZ=${TZ}
-        - PUID=${PUID}
-        - PGID=${PGID}
-        - LOCAL_NETWORK=192.168.1.0/24
-        - OPENVPN_CONFIG=${OPENVPN_CONFIG}
-        - OPENVPN_USERNAME=${OPENVPN_USER}
-        - OPENVPN_PASSWORD=${OPENVPN_PASS}
-        - OPENVPN_PROVIDER=${OPENVPN_PROVIDER}
-        - TRANSMISSION_UTP_ENABLED=FALSE
-        - TRANSMISSION_SPEED_LIMIT_UP=0
-        - TRANSMISSION_DOWNLOAD_DIR=/download/complete  # Make sure this corresponds to the ${DOWNLOAD} volume
-        - TRANSMISSION_INCOMPLETE_DIR=/download/incomplete  # Make sure this corresponds to the ${DOWNLOAD} volume
-        - TRANSMISSION_WATCH_DIR=/watch  # Make sure this corresponds to the ${WATCH} volume
-        - TRANSMISSION_WEB_UI=flood-for-transmission
-        - TRANSMISSION_RPC_USERNAME=${TRANSMISSION_USER}
-        - TRANSMISSION_RPC_PASSWORD=${TRANSMISSION_PASS}
-        - TRANSMISSION_RPC_AUTHENTICATION_REQUIRED=true
-        - TRANSMISSION_SCRIPT_TORRENT_DONE_ENABLED=true
-        # - TRANSMISSION_SCRIPT_TORRENT_DONE_FILENAME=/scripts/autosynch.sh
-      logging:
-        driver: json-file
-        options:
-          max-size: 10m
-      ports:
-        - '9091:9091'
     
   server:
-    image: getumbrel/community-app-store-hello-world:latest
-    user: "1000:1000"
-    init: true
+    image: haugene/transmission-openvpn
+    cap_add:
+      - NET_ADMIN
+    container_name: transmission
+    restart: on-failure
+    dns:
+      - 8.8.8.8  # Using google dns
+      - 8.8.4.4 
+    volumes:
+      - ${APPDATA}transmission:/data  # Transmission-openvpn data folder where config and stuff defaults 
+      - ${DOWNLOAD}
+      - ${WATCH}
+      - ${APPDATA}transmission/scripts:/scripts  # In case you want to plug into any of the image hooks
+      - ${GMEDIA_TV}
+      - ${GMEDIA_MOVIE}
+      - /home/micahbrich/scripts:/hostpipe
+    environment:
+      - TZ=${TZ}
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - LOCAL_NETWORK=192.168.1.0/24
+      - OPENVPN_CONFIG=${OPENVPN_CONFIG}
+      - OPENVPN_USERNAME=${OPENVPN_USER}
+      - OPENVPN_PASSWORD=${OPENVPN_PASS}
+      - OPENVPN_PROVIDER=${OPENVPN_PROVIDER}
+      - TRANSMISSION_UTP_ENABLED=FALSE
+      - TRANSMISSION_SPEED_LIMIT_UP=0
+      - TRANSMISSION_DOWNLOAD_DIR=/download/complete  # Make sure this corresponds to the ${DOWNLOAD} volume
+      - TRANSMISSION_INCOMPLETE_DIR=/download/incomplete  # Make sure this corresponds to the ${DOWNLOAD} volume
+      - TRANSMISSION_WATCH_DIR=/watch  # Make sure this corresponds to the ${WATCH} volume
+      - TRANSMISSION_WEB_UI=flood-for-transmission
+      - TRANSMISSION_RPC_USERNAME=${TRANSMISSION_USER}
+      - TRANSMISSION_RPC_PASSWORD=${TRANSMISSION_PASS}
+      - TRANSMISSION_RPC_AUTHENTICATION_REQUIRED=true
+      - TRANSMISSION_SCRIPT_TORRENT_DONE_ENABLED=true
+      # - TRANSMISSION_SCRIPT_TORRENT_DONE_FILENAME=/scripts/autosynch.sh
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+    ports:
+      - '9091:9091'
